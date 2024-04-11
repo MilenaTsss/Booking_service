@@ -8,7 +8,7 @@ export const getServices = async (businessId, setError) => {
     };
 
     try {
-        const response = await fetch("/api/services/" + businessId, requestOptions);
+        const response = await fetch(`/api/services/${businessId}`, requestOptions);
         const data = await response.json();
 
         if (response.status === 401) {
@@ -125,7 +125,7 @@ export const getProviders = async (businessId, setError) => {
     };
 
     try {
-        const response = await fetch("/api/providers/" + businessId, requestOptions);
+        const response = await fetch("/api/providers/" + businessId + "/", requestOptions);
         const data = await response.json();
 
         if (response.status === 401) {
@@ -356,7 +356,7 @@ export const getUser = async (userId, setError) => {
     };
 
     try {
-        const response = await fetch("/api/user/" + userId, requestOptions);
+        const response = await fetch(`/api/user/${userId}/`, requestOptions);
         const data = await response.json();
 
         if (response.status === 401) {
@@ -382,7 +382,7 @@ export const getProvider = async (businessId, providerId, setError) => {
     };
 
     try {
-        const response = await fetch("/api/provider/" + businessId + '/' + providerId, requestOptions);
+        const response = await fetch(`/api/provider/${businessId}/${providerId}/`, requestOptions);
         const data = await response.json();
 
         if (response.status === 401) {
