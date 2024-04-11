@@ -20,7 +20,7 @@ export const getUser = async () => {
         }
 
 
-        Cookies.set('user', JSON.stringify(data), {expires: 7, secure: true, sameSite: 'Strict'});
+        Cookies.set('user', JSON.stringify(data), {expires: 7, secure: false, sameSite: 'Lax'});
         return data;
     } catch (error) {
         console.error('Error:', error);
