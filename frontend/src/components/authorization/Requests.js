@@ -16,6 +16,7 @@ export const login = async (email, password, navigate, setError) => {
         if (response.status === 401) {
             setError('Неправильная почта или пароль');
         } else if (!response.ok) {
+            console.log(response.status)
             setError('Что-то пошло не так');
         } else {
             const token = data.token;
@@ -25,7 +26,7 @@ export const login = async (email, password, navigate, setError) => {
             Cookies.set('user', JSON.stringify(user));
 
             if (user.user_type !== ADMIN_USER_TYPE && user.user_type !== CUSTOMER_USER_TYPE) {
-                setError('Что-то пошло не так');
+                setError('Неверный тип пользователя');
             } else {
                 setError(null);
 

@@ -23,7 +23,7 @@ export default class App extends Component {
         return (
             <Router>
                 <Routes>
-                    <Route path="/" element={<p>This is the home page</p>}/>
+                    <Route path="/" element={<LoginPage/>}/>
                     <Route path="/login" element={<LoginPage/>}/>
                     <Route path="/register" element={<RegisterCustomerPage/>}/>
                     <Route path="/register/admin" element={<RegisterAdminPage/>}/>
