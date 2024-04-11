@@ -44,7 +44,7 @@ export default function RegisterCustomerPage() {
     };
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container maxWidth="sm" style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}>
             <CssBaseline/>
             <Box
                 sx={{

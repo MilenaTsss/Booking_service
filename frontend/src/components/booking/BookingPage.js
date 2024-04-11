@@ -98,7 +98,7 @@ export default function BookingPage() {
     };
 
     return (
-        <Container>
+        <Container maxWidth="sm" style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}>
             <Box bgcolor="primary.main" p={2} mb={2} borderRadius={4} textAlign="center">
                 <Typography variant="h3" component="h1" color="white">Booking Page</Typography>
             </Box>

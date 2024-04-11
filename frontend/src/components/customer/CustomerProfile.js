@@ -74,7 +74,7 @@ export default function CustomerProfilePage() {
     }, [user]);
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container maxWidth="sm" style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}>
             <CssBaseline/>
             <Box sx={{
                 marginTop: 8,
