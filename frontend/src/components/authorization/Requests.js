@@ -20,10 +20,10 @@ export const login = async (email, password, navigate, setError) => {
             setError('Что-то пошло не так');
         } else {
             const token = data.token;
-            Cookies.set('token', token, {expires: 7, secure: true});
+            Cookies.set('token', token, {expires: 7, secure: true, sameSite: 'Strict'});
 
             const user = await getUser(setError);
-            Cookies.set('user', JSON.stringify(user));
+            Cookies.set('user', JSON.stringify(user), {expires: 7, secure: true, sameSite: 'Strict'});
 
             if (user.user_type !== ADMIN_USER_TYPE && user.user_type !== CUSTOMER_USER_TYPE) {
                 setError('Неверный тип пользователя');
@@ -66,11 +66,11 @@ export const register = async (email, password, firstName, lastName, companyName
         } else if (!response.ok) {
             setError('Что-то пошло не так');
         } else {
-             const token = data.token;
-             Cookies.set('token', token, {expires: 7, secure: true});
+            const token = data.token;
+            Cookies.set('token', token, {expires: 7, secure: true, sameSite: 'Strict'});
 
             const user = await getUser(setError);
-            Cookies.set('user', JSON.stringify(user));
+            Cookies.set('user', JSON.stringify(user), {expires: 7, secure: true, sameSite: 'Strict'});
 
             if (user.user_type !== CUSTOMER_USER_TYPE && user.user_type !== ADMIN_USER_TYPE) {
                 setError('Что-то пошло не так');

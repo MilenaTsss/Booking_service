@@ -20,7 +20,7 @@ export const getUser = async (setError) => {
         }
 
         setError(null);
-        Cookies.set('user', JSON.stringify(data));
+        Cookies.set('user', JSON.stringify(user), {expires: 7, secure: true, sameSite: 'Strict'});
         return data;
     } catch (error) {
         console.error('Error:', error);
@@ -52,7 +52,7 @@ export const updateUser = async (firstName, lastName, companyName, setUser, setE
         }
 
         setUser(data);
-        Cookies.set('user', JSON.stringify(data));
+        Cookies.set('user', JSON.stringify(user), {expires: 7, secure: true, sameSite: 'Strict'});
         setSuccess('Данные успешно обновлены');
         setError(null);
         return data;
